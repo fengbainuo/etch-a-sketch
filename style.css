@@ -17,6 +17,7 @@ footer {
 
 .btn {
     margin: 5px;
+    border-radius: 9999px;
 }
 
 .col {

@@ -1,8 +1,9 @@
 const container = document.getElementById('container');
 
 let cols = 16;
-let height = 400/cols;
-let width = 400/cols;
+getSizes(cols);
+
+let color = "black";
 
 container.style.cssText = `grid-template-columns: repeat(${cols}, ${width}px [col-start])`;
 
@@ -19,10 +20,18 @@ document.getElementById('size').onclick = function() {
         container.removeChild(container.firstChild);
     };
     cols = prompt("Enter the number of blocks in a row!");
-    height = 400/cols;
-    width = 400/cols;
+    getSizes(cols);
     container.style.cssText = `grid-template-columns: repeat(${cols}, ${width}px [col-start])`;
     generateGrid(cols, height, width);
+};
+
+document.getElementById('colorChange').onclick = function() {
+    color = prompt("Choose an alternative color");
+};
+
+function getSizes(x) {
+    height = 400/x;
+    width = 400/x;
 };
 
 function generateGrid(cols, height, width) {
@@ -32,7 +41,7 @@ function generateGrid(cols, height, width) {
         col.setAttribute('id', `col${i+1}`);
         col.onmouseover = function(e) {
             if (e.buttons == 1 || e.buttons == 3) {
-                col.classList.add('colored');
+                col.style.backgroundColor = color;
             };
         };
         col.style.cssText = `width: ${width}px; min-height: ${height}px; clear:both`;
