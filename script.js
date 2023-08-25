@@ -10,8 +10,10 @@ for (let i = 0; i < cols*cols; i++) {
     const col = document.createElement('div');
     col.classList.add('col');
     col.setAttribute('id', `col${i+1}`);
-    col.onmouseover = function() {
-        col.classList.add('colored');
+    col.onmouseover = function(e) {
+        if (e.buttons == 1 || e.buttons == 3) {
+            col.classList.add('colored');
+        };
     };
     col.style.cssText = `width: ${width}px; min-height: ${height}px; clear:both`;
     container.appendChild(col);
@@ -29,8 +31,10 @@ document.getElementById('size').onclick = function() {
         const col = document.createElement('div');
         col.classList.add('col');
         col.setAttribute('id', `col${i+1}`);
-        col.onmouseover = function() {
-            col.classList.add('colored');
+        col.onmouseover = function(e) {
+            if (e.buttons == 1 || e.buttons == 3) {
+                col.classList.add('colored');
+            };
         };
         col.style.cssText = `width: ${width}px; min-height: ${height}px; clear:both`;
         container.appendChild(col);
