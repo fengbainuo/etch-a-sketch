@@ -6,17 +6,12 @@ let width = 400/cols;
 
 container.style.cssText = `grid-template-columns: repeat(${cols}, ${width}px [col-start])`;
 
-for (let i = 0; i < cols*cols; i++) {
-    const col = document.createElement('div');
-    col.classList.add('col');
-    col.setAttribute('id', `col${i+1}`);
-    col.onmouseover = function(e) {
-        if (e.buttons == 1 || e.buttons == 3) {
-            col.classList.add('colored');
-        };
-    };
-    col.style.cssText = `width: ${width}px; min-height: ${height}px; clear:both`;
-    container.appendChild(col);
+generateGrid(cols, height, width);
+
+document.getElementById('visibleGrid').onclick = function() {
+    document.querySelectorAll('.col').forEach( (item) => {
+        item.classList.toggle('grid');
+    });
 };
 
 document.getElementById('size').onclick = function() {
@@ -27,6 +22,10 @@ document.getElementById('size').onclick = function() {
     height = 400/cols;
     width = 400/cols;
     container.style.cssText = `grid-template-columns: repeat(${cols}, ${width}px [col-start])`;
+    generateGrid(cols, height, width);
+};
+
+function generateGrid(cols, height, width) {
     for (let i = 0; i < cols*cols; i++) {
         const col = document.createElement('div');
         col.classList.add('col');
@@ -39,4 +38,4 @@ document.getElementById('size').onclick = function() {
         col.style.cssText = `width: ${width}px; min-height: ${height}px; clear:both`;
         container.appendChild(col);
     };
-};
+}
