@@ -1,6 +1,6 @@
 const container = document.getElementById('container');
 
-let cols = 5;
+let cols = 16;
 let height = 400/cols;
 let width = 400/cols;
 
