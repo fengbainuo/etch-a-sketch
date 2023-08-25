@@ -9,6 +9,12 @@ container.style.cssText = `grid-template-columns: repeat(${cols}, ${width}px [co
 
 generateGrid(cols, height, width);
 
+document.getElementById('clear').onclick = function() {
+    document.querySelectorAll('.col').forEach( (item) => {
+        item.style.backgroundColor = "white";
+    });
+};
+
 document.getElementById('visibleGrid').onclick = function() {
     document.querySelectorAll('.col').forEach( (item) => {
         item.classList.toggle('grid');
