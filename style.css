@@ -1,3 +1,7 @@
+body {
+    text-align: center;
+}
+
 #container {
     margin: auto;
     display: grid;
@@ -7,6 +11,14 @@
     /*grid-template-columns: repeat(16, 25px [col-start]);*/
 }
 
+.btn {
+    margin: 5px;
+}
+
 .col {
-    /*border: solid 1px black;*/
+    background-color: white;
+}
+
+.colored {
+    background-color: black;
 }
