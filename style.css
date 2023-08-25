@@ -4,7 +4,8 @@ body {
     align-items: center;
     justify-items: center;
     text-align: center;
-    background-color: #FFFFE3;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
 }
 
 footer {
@@ -42,15 +43,21 @@ footer {
 }
 
 .btn-primary {
-    color: black;
-    border: #BCE6C2;
-    background-color: #BCE6C2;
+    color: #cdd6f4;
+    border: #313244;
+    background-color: #313244;
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    color: black;
-    border: #97CCB8;
-    background-color: #97CCB8;
+.btn-primary:hover {
+    color: #cdd6f4;
+    border: #45475a;
+    background-color: #45475a;
+}
+
+.btn-primary:active, .btn-primary:target, .btn-primary:focus, .btn-primary:active:focus {
+    color: #cdd6f4;
+    border: #45475a;
+    background-color: #45475a; !important;
 }
 
 #colorPicker {
