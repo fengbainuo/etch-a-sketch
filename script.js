@@ -9,6 +9,10 @@ container.style.cssText = `grid-template-columns: repeat(${cols}, ${width}px [co
 
 generateGrid(cols, height, width);
 
+document.getElementById('colorPicker').oninput = function(e) {
+    color = e.target.value;
+};
+
 document.getElementById('clear').onclick = function() {
     document.querySelectorAll('.col').forEach( (item) => {
         item.style.backgroundColor = "white";
